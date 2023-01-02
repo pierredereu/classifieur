@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.ScatterChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="726.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerPassenger">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="942.0">
+         <children>
+            <Button fx:id="buttonClassifierLesDonneesPassenger" layoutX="631.0" layoutY="132.0" mnemonicParsing="false" onAction="#onActionClassifierLesDonneesPassenger" prefHeight="31.0" prefWidth="166.0" text="Classifier les données" />
+            <Button fx:id="buttonDonneeAClassifierPassenger" layoutX="294.0" layoutY="12.0" mnemonicParsing="false" onAction="#onActionDonneesAClassifierPassenger" prefHeight="29.0" prefWidth="165.0" text="Données à classifier" />
+            <ScatterChart fx:id="graphiquePassenger" layoutX="477.0" layoutY="236.0" prefHeight="316.0" prefWidth="430.0">
+               <xAxis>
+                  <NumberAxis fx:id="idAbscissePassenger" side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis fx:id="idOrdonneePassenger" side="LEFT" />
+               </yAxis>
+            </ScatterChart>
+            <ChoiceBox fx:id="choiceBoxOrdonneePassenger" layoutX="492.0" layoutY="579.0" prefHeight="24.0" prefWidth="165.0" />
+            <ChoiceBox fx:id="choiceBoxAbscissePassenger" layoutX="665.0" layoutY="579.0" prefHeight="24.0" prefWidth="165.0" />
+            <ChoiceBox fx:id="choiceBoxDistancePassenger" layoutX="558.0" layoutY="29.0" prefHeight="24.0" prefWidth="123.0" />
+            <Label layoutX="477.0" layoutY="31.0" text="Distance:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="542.0" layoutY="553.0" text="Ordonnée">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="714.0" layoutY="553.0" text="Abscisse">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="radioButtonNNPassenger" layoutX="748.0" layoutY="17.0" mnemonicParsing="false" text="Non-normalisé">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="groupPassenger" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radioButtonNPassenger" layoutX="748.0" layoutY="54.0" mnemonicParsing="false" text="Normalisé" toggleGroup="$groupPassenger">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </RadioButton>
+            <Label layoutX="477.0" layoutY="82.0" text="K=">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="558.0" layoutY="184.0" text="Meilleur K:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="idMeilleurKPassenger" layoutX="637.0" layoutY="175.0" prefHeight="37.0" prefWidth="70.0">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Slider fx:id="idSliderPassenger" layoutX="558.0" layoutY="84.0" majorTickUnit="1.0" max="30.0" min="1.0" minorTickCount="0" prefHeight="15.0" prefWidth="369.0" showTickLabels="true" showTickMarks="true" />
+            <Label fx:id="labelSliderPassenger" layoutX="496.0" layoutY="77.0" prefHeight="31.0" prefWidth="46.0">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Button fx:id="buttonConstruireLeModelePassenger" layoutX="113.0" layoutY="12.0" mnemonicParsing="false" onAction="#onActionConstruireLeModelePassenger" prefHeight="29.0" prefWidth="165.0" text="Modèle" />
+            <Label layoutX="14.0" layoutY="17.0" text="Importer :">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonValiderPassenger" layoutX="855.0" layoutY="579.0" mnemonicParsing="false" onAction="#onActionValiderPassenger" text="Valider" />
+            <TableView fx:id="tableViewPassenger" layoutX="13.0" layoutY="63.0" prefHeight="586.0" prefWidth="451.0">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="33.599976539611816" text="ID" />
+                <TableColumn fx:id="classe" prefWidth="41.599971771240234" text="Classe" />
+                  <TableColumn fx:id="nom" prefWidth="150.0" text="Nom" />
+                  <TableColumn fx:id="sex" minWidth="0.0" prefWidth="100.0" text="Sex" />
+                  <TableColumn fx:id="age" prefWidth="35.199951171875" text="Age" />
+                  <TableColumn fx:id="sibsp" prefWidth="44.800018310546875" text="SIBSP" />
+                  <TableColumn fx:id="parch" prefWidth="55.99995422363281" text="PARCH" />
+                  <TableColumn fx:id="nomTicket" prefWidth="76.7999267578125" text="Nom Ticket" />
+                  <TableColumn fx:id="prixTicket" prefWidth="86.39996337890625" text="Prix Du Ticket" />
+                  <TableColumn fx:id="cabine" prefWidth="73.5999755859375" text="Cabine" />
+                  <TableColumn fx:id="porteEmbarquement" prefWidth="139.199951171875" text="Porte d'embarquation" />
+                  <TableColumn fx:id="survie" prefWidth="70.0" text="Survie" />
+              </columns>
+            </TableView>
+            <Label fx:id="labelRobustessePassenger" layoutX="561.0" layoutY="128.0" prefHeight="39.0" prefWidth="64.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="ajouterPassager" layoutX="514.0" layoutY="618.0" mnemonicParsing="false" onAction="#onActionAjouterPassager" text="Ajouter un Passager" />
+            <GridPane layoutX="5.0" layoutY="649.0" prefHeight="62.0" prefWidth="933.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="32.8000244140625" minHeight="10.0" prefHeight="28.8000244140625" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="31.9999755859375" minHeight="10.0" prefHeight="31.9999755859375" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="38.0" prefWidth="84.0" text="ID" />
+                  <TextArea fx:id="textAreaId" prefHeight="31.0" prefWidth="84.0" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" prefHeight="38.0" prefWidth="84.0" text="Classe" GridPane.columnIndex="1" />
+                  <TextArea fx:id="textAreaClasse" prefHeight="39.0" prefWidth="84.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" prefHeight="38.0" prefWidth="84.0" text="Nom" GridPane.columnIndex="2" />
+                  <TextArea fx:id="textAreaNom" prefHeight="38.0" prefWidth="78.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" prefHeight="38.0" prefWidth="84.0" text="Sex" GridPane.columnIndex="3" />
+                  <ChoiceBox fx:id="choiceBoxSex" prefHeight="44.0" prefWidth="86.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" prefHeight="38.0" prefWidth="84.0" text="Age" GridPane.columnIndex="4" />
+                  <Label alignment="CENTER" prefHeight="39.0" prefWidth="84.0" text="SIBSP" GridPane.columnIndex="5" />
+                  <TextArea fx:id="textAreaAge" prefHeight="38.0" prefWidth="84.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <TextArea fx:id="textAreaSibsp" prefHeight="39.0" prefWidth="84.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" prefHeight="39.0" prefWidth="84.0" text="PARCH" GridPane.columnIndex="6" />
+                  <TextArea fx:id="textAreaParch" prefHeight="37.0" prefWidth="84.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" prefHeight="39.0" prefWidth="84.0" text="Numero Ticket" GridPane.columnIndex="7" />
+                  <TextArea fx:id="textAreaNumeroTicket" prefHeight="39.0" prefWidth="84.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" prefHeight="39.0" prefWidth="84.0" text="Prix Ticket" GridPane.columnIndex="8" />
+                  <TextArea fx:id="textAreaPrixTicket" prefHeight="39.0" prefWidth="84.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                  <TextArea fx:id="textAreaCabine" prefHeight="39.0" prefWidth="84.0" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+                  <TextArea fx:id="textAreaPorte" prefHeight="39.0" prefWidth="84.0" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" prefHeight="39.0" prefWidth="84.0" text="Porte d'embarquation" GridPane.columnIndex="10" />
+                  <Label alignment="CENTER" prefHeight="39.0" prefWidth="84.0" text="Cabine" GridPane.columnIndex="9" />
+               </children>
+            </GridPane>
+            <Button fx:id="resetAllPassenger" layoutX="850.0" layoutY="618.0" mnemonicParsing="false" onAction="#onActionResetAllPassenger" text="Reset All" />
+            <Label fx:id="labelMaxRobustesse" layoutX="879.0" layoutY="174.0" prefHeight="38.0" prefWidth="57.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="714.0" layoutY="184.0" text="Meilleur Robustesse:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="471.0" layoutY="137.0" text="Robustesse:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="772.0" prefWidth="964.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane layoutX="5.0" layoutY="12.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="946.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Iris">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="956.0">
+                     <children>
+                        <AnchorPane prefHeight="665.0" prefWidth="956.0" />
+                        <fx:include source="irisView.fxml" />
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab text="Passenger">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="915.0">
+                     <children>
+                        <AnchorPane prefHeight="665.0" prefWidth="956.0" />
+                        <fx:include source="passengerView.fxml" />
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</Pane>

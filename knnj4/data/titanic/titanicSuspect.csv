@@ -1,0 +1,7 @@
+PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
+794,3,1,"Hoyt, Mr. William Fisher",male,,0,0,PC 17600,30.6958,,C
+615,3,3,"Brocklebank, Mr. William Alfred",male,35,0,0,364512,8.05,,S
+495,3,3,"Stanley, Mr. Edward Roland",male,21,0,0,A/4 45380,8.05,,S
+300,3,1,"Baxter, Mrs. James (Helene DeLaudeniere Chaput)",female,50,0,1,PC 17558,247.5208,B58 B60,C
+136,3,2,"Richard, Mr. Emile",male,23,0,0,SC/PARIS 2133,15.0458,,C
+44,3,2,"Laroche, Miss. Simonne Marie Anne Andree",female,3,1,2,SC/Paris 2123,41.5792,,C
